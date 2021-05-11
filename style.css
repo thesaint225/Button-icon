@@ -1,0 +1,119 @@
+/* different browser apply different default styling to elements , so 
+if you are looking  to have a website look the same in all the differents 
+(you ares) a  css reset is important .
+2. it also allows you  to thinks forwards as applying  attribute  
+like margin and padding 
+*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: #e3ebfe;
+    display: flex;
+    /* align-items align element in the center  in vertical way */
+    align-items: center;
+    /* justify -content align element in the center in the horizontal ways */
+    justify-content: center;
+}
+
+/* width  and height properties are used  to set the height and with
+in this particular code block .hero  we need the height to display the background
+ */
+button {
+    width: 270px;
+    height: 80px;
+    border: 0;
+    /* border: 700; */
+    /* outline property  in css  draws a line around  the outside  of an element 
+ around the border 
+ 1.it always goes around all sides ,
+ you can't specify particular side  
+ 2. it is not part of the box model  so it will not affect the position of 
+  the element or adjacent elements(nice for debugging!)
+  in the block of code above is perfect example of outline propertie commented*/
+    /* outline: 1px dashed red; */
+    outline: 0;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 22px;
+    /* border radius property allow you add rounded */
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px 5px rgba(0, 0, 0, 0.4);
+    /*  */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.checked-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    /* the box shadow  properties adds shadow effects around an element's frame
+     you can set multiples effects seperate by  commas */
+    box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    right: -40px;
+    /* the opacity property  in css specifes  how transparent 
+    an element is  */
+    opacity: 0;
+
+
+}
+
+.checked-box svg {
+    width: 40px;
+    /* margin property sets  the margin area on all the four side inside
+    the element */
+    margin: 20px;
+}
+
+svg path {
+    /* svg stroke-width property defines the thickness of a line , text 
+    or outline  of an element  */
+    stroke-width: 3;
+
+    /* svg stroke property defines the colour of line,text or 
+    outline of an element */
+    stroke: #fff;
+    stroke-dasharray: 34;
+    /* the stroke-dashoffset  property  in css defines the location along a
+    an svg  path where  the dash of a stroke will begin
+    the higher the number, the further  along  the path
+    this is an example */
+    /* stroke-dashoffset: 100; */
+    stroke-dashoffset: 34;
+
+
+    stroke-linecap: round;
+}
+
+.active {
+    background: #ff2b75;
+    transition: 1s;
+}
+
+.active .checked-box {
+    right: 0;
+    opacity: 1;
+    transition: 1s;
+}
+
+.active p {
+    margin-right: 125px;
+    transition: 1s;
+}
+
+.active svg path {
+    stroke-dashoffset: 0;
+    transition: 1s;
+    transition-delay: 1s;
+
+}
